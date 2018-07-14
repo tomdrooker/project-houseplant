@@ -5,3 +5,87 @@ html {
   font-size: 16px;
   background-color: rgb(250, 247, 238);
 }
+
+/* Header styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 2rem 1.5rem 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(22, 80, 64);
+  justify-content: center;
+}
+
+/* Nav styles */
+
+nav {
+  font-weight: 200;
+  font-size: 1.3rem;
+  border-top: 2px solid rgb(112, 146, 134);
+}
+
+nav ul {
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Jumbo styles */
+
+#jumbo {
+  background-color: rgb(217, 231, 219);
+  height: 27rem;
+  width: 100%;
+  display: flex;
+}
+
+.left-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 3rem;
+}
+
+.left-content h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(22, 80, 64);
+}
+
+.left-content h4 {
+  width: 70%;
+  color: rgb(77, 120, 106);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin: 2rem 0 2rem 0;
+}
+
+.left-content button {
+  background-color: black;
+  color: white;
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  height: 45px;
+  width: 130px;
+}
+
+.right-content {
+  width: 45%;
+}
+
+.right-content img {
+  width: 80%;
+  height: auto;
+  position: relative;
+  top: 3rem;
+}
