@@ -38,6 +38,14 @@ nav ul {
   color: rgb(124, 154, 142);
 }
 
+nav a:link {
+  text-decoration: none;
+  color: rgb(124, 154, 142);
+}
+
+nav a:visited {
+  color: rgb(124, 154, 142);
+}
 /* Jumbo styles */
 
 #jumbo {
@@ -79,6 +87,11 @@ nav ul {
   font-weight: 200;
   height: 45px;
   width: 130px;
+}
+
+.left-content button:hover {
+  background-color: white;
+  color: black;
 }
 
 .right-content {
