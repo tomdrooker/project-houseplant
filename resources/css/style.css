@@ -97,7 +97,6 @@ nav ul {
 #product-gallery {
   margin: 12rem 2rem 0 2rem;
   display: flex;
-
 }
 
 .text-content {
@@ -177,9 +176,64 @@ nav ul {
   align-items: center;
 }
 
+#how-it-works h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
 .how-it-works-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 700px;
   width: 600px;
   background-color: white;
   border-radius: 3%;
+  font-weight: 300;
+}
+
+.second-step {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.second-step p {
+  margin-left: 2rem;
+}
+
+.how-it-works-box figure {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+/* Second product gallery styles */
+
+#second-product-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 5rem 0;
+}
+
+#second-product-gallery figure {
+
+}
+
+#second-product-gallery img {
+  width: 20%;
+  height: auto;
+}
+
+#second-product-gallery img:nth-child(2n+1) {
+  margin: 0 auto;
+}
+
+/* Footer styles */
+
+footer {
+  height: 20rem;
+  background-color: rgb(23, 81, 65);
 }
