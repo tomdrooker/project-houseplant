@@ -142,3 +142,44 @@ nav ul {
   font-weight: 600;
   color: rgb(22, 80, 64);
 }
+
+/* Key info page break styles */
+
+#key-info {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgb(250, 244, 210);
+  margin-top: 3rem;
+}
+
+#key-info p:nth-child(2n+1) {
+  margin: 0 2rem 2rem 2rem;
+}
+
+/* Page break */
+
+#page-break {
+  height: 25rem;
+  background-image: url("../images/page-break-plants.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* How it works styles */
+
+#how-it-works {
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works-box {
+  height: 700px;
+  width: 600px;
+  background-color: white;
+  border-radius: 3%;
+}
