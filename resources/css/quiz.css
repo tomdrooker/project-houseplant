@@ -1,0 +1,74 @@
+/* Universal Styles */
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  background-color: rgb(250, 247, 238);
+  color: rgb(77, 120, 106);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+#quiz-box {
+  background-color: rgb(217, 231, 219);
+  padding: 2rem 2rem;
+  height: 500px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answers button {
+  width: 100%;
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  border-radius: 3%;
+}
+
+.answers button:nth-child(2n+1) {
+  margin: 2rem 0 2rem 0;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
+
+.submit-button button {
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  border-radius: 50%;
+  height: 46px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(22, 80, 64);
+  margin-bottom: 4rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
