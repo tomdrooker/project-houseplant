@@ -9,57 +9,49 @@ html {
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: auto;
+  justify-content: center;
+  height: 625px;
 }
 
-#quiz-box {
+#quiz-container {
   background-color: rgb(217, 231, 219);
-  padding: 2rem 2rem;
   height: 500px;
   width: 450px;
+}
+
+#controls {
+  height: 450px;
+  width: 35%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .answers {
   display: flex;
   flex-direction: column;
+  font-size: 1.1rem;
 }
 
-.answers button {
-  width: 100%;
-  border: none;
-  font-family: "Source Sans Pro", sans-serif;
+.question {
+  margin-bottom: 2rem;
   font-size: 1.2rem;
-  font-weight: 200;
-  border-radius: 3%;
+  position: relative;
+  width: 300px;
 }
 
-.answers button:nth-child(2n+1) {
-  margin: 2rem 0 2rem 0;
+.slide {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  margin: 0 auto;
 }
 
-.submit-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 3rem;
-}
-
-.submit-button button {
-  border: none;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 200;
-  border-radius: 50%;
-  height: 46px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
+.active-slide {
+  opacity: 1;
+  z-index: 2;
 }
 
 h3 {
@@ -71,4 +63,22 @@ h3 {
 
 p {
   margin-bottom: 2rem;
+}
+
+button {
+  z-index: 10;
+  width: 100%;
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+  border-radius: 3%;
+}
+
+#submit, #next {
+  margin-top: 4px;
+}
+
+label:nth-child(2n+1) {
+  margin: 1rem 0 1rem 0;
 }
