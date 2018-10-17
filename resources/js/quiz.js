@@ -8,27 +8,35 @@ let currentSlide = 0;
 
 const quizData = [
   {
-    question: "What is your favourite album by the rock band Led Zeppelin?",
+    question: "How much time do you have to dedicate to your houseplants?",
     answers: {
-      a: "Physical Graffiti",
-      b: "Houses Of The Holy",
-      c: "Led Zeppelin III"
+      a: "No time",
+      b: "Some time",
+      c: "A lot"
     }
   },
   {
-    question: "What is your favourite fruit?",
+    question: "When would you be able to water your houseplants?",
     answers: {
-      a: "Pear",
-      b: "Donut peaches",
-      c: "Cherries"
+      a: "Once a week",
+      b: "Every two weeks",
+      c: "Monthly"
     }
   },
   {
-    question: "What's the best kind of pasta?",
+    question: "How much light do you get in your home?",
     answers: {
-      a: "Fusilli",
-      b: "Penne",
-      c: "Spaghetti"
+      a: "Hardly any",
+      b: "Not a great deal, but there are some sunny spots",
+      c: "Lots - we always get some sun"
+    }
+  },
+  {
+    question: "Do you want to have to trim your plants?",
+    answers: {
+      a: "No",
+      b: "Doesn't matter",
+      c: "Yes"
     }
   }
 ];
@@ -42,9 +50,10 @@ function buildQuiz() {
       for (letter in currentQuestion.answers) {
         answers.push(
           `
-            <label>
-              <input type="radio" name="question${questionNumber}" value="${currentQuestion.answers[letter]}">
+            <label class="container">
+              <input type="radio" name="question${questionNumber}" value="${letter}">
                 ${currentQuestion.answers[letter]}
+              <span class="checkmark"></span>
             </label>
           `
         );
@@ -62,8 +71,16 @@ function buildQuiz() {
   quizSection.innerHTML = output.join('');
 };
 
+// Select each checked radio button and display in results div.
+
 function showResults() {
-  const userAnswers = [];
+  quizSection.style.display = "none";
+
+  const userAnswers = [
+    [],
+    [],
+    []
+  ];
 
   const output = [];
 
@@ -73,18 +90,56 @@ function showResults() {
       const answerContainer = answerContainers[questionNumber];
       const selector = 'input[name=question'+questionNumber+']:checked';
       const userAnswer = (answerContainer.querySelector(selector)).value;
-      userAnswers.push(userAnswer);
+
+      if (userAnswer === "a") {
+        userAnswers[0].push(userAnswer);
+      } else if (userAnswer === "b") {
+        userAnswers[1].push(userAnswer);
+      } else if (userAnswer === "c") {
+        userAnswers[2].push(userAnswer);
+      }
     }
   )
-  output.push(
-    `
-      <h2>Your favourite Led Zeppelin album is ${userAnswers[0]}</h2>
-      <h2>Your favourite fruit is ${userAnswers[1].toLowerCase()}</h2>
-      <h2>Your favourite type of pasta is ${userAnswers[2].toLowerCase()}</h2>
-    `
-  )
+
+  if (userAnswers[0].length > userAnswers[1].length && userAnswers[0].length > userAnswers[2].length) {
+    output.push(
+      `
+        <h2>Take it easy</h2>
+        <img src="resources/images/easy.jpg">
+        <h3>Peace lily dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
+      `
+    )
+  } else if (userAnswers[1].length > userAnswers[0].length && userAnswers[1].length > userAnswers[2].length) {
+    output.push(
+      `
+        <h2>Steady as she goes</h2>
+        <img src="resources/images/medium.jpg">
+        <h3>Pilea dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
+      `
+    )
+  } else if (userAnswers[2].length > userAnswers[1].length && userAnswers[2].length > userAnswers[0].length) {
+    output.push(
+      `
+        <h2>It's tricky</h2>
+        <img src="resources/images/tricky.jpg">
+        <h3>Moth orchid dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
+      `
+    )
+  } else {
+    output.push(
+      `
+        <h2>Steady as she goes</h2>
+        <img src="resources/images/medium.jpg">
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
+      `
+    )
+  }
+
   resultsSection.innerHTML = output.join('');
+  console.log(userAnswers);
 };
+
+// Display question and control appearanceof buttons
 
 function showSlide(n) {
   slides[currentSlide].classList.remove("active-slide");
@@ -119,6 +174,6 @@ previousButton.addEventListener("click", showPreviousSlide);
 nextButton.addEventListener("click", showNextSlide);
 
 buildQuiz();
-showSlide(2);
+showSlide(0);
 
 submitButton.addEventListener("click", showResults);

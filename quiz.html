@@ -5,24 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <link rel="stylesheet" type="text/css" href="resources/css/quiz.css">
   </head>
   <body>
+    <header>
+      <i class="fas fa-user fa-2x"></i>
+      <h1>Brand name</h1>
+      <i class="fas fa-shopping-basket fa-2x"></i>
+    </header>
 
-    <section id="quiz-container">
+    <nav>
+      <ul>
+        <li><a href="#">Subscriptions</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Plant care</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+
+  <section id="page-container">
+
+    <div id="quiz-container">
       <div id="quiz"></div>
 
-      <section id="results">
-      </section>
+      <div id="results">
+      </div>
 
-      <section id="controls">
+      <div id="controls">
         <button id="previous">Previous question</button>
         <button id="next">Next question</button>
         <button id="submit">Submit</button>
-      </section>
+      </div>
 
-    </section>
-
+    </div>
+  </section>
 
 
     <script src="resources/js/quiz.js"></script>
