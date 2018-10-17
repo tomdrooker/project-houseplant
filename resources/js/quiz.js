@@ -104,7 +104,7 @@ function showResults() {
   if (userAnswers[0].length > userAnswers[1].length && userAnswers[0].length > userAnswers[2].length) {
     output.push(
       `
-        <h2>Take it easy</h2>
+        <h2>Easy</h2>
         <img src="resources/images/easy.jpg">
         <h3>Peace lily dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
       `
@@ -112,7 +112,7 @@ function showResults() {
   } else if (userAnswers[1].length > userAnswers[0].length && userAnswers[1].length > userAnswers[2].length) {
     output.push(
       `
-        <h2>Steady as she goes</h2>
+        <h2>Medium</h2>
         <img src="resources/images/medium.jpg">
         <h3>Pilea dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
       `
@@ -120,7 +120,7 @@ function showResults() {
   } else if (userAnswers[2].length > userAnswers[1].length && userAnswers[2].length > userAnswers[0].length) {
     output.push(
       `
-        <h2>It's tricky</h2>
+        <h2>Hard</h2>
         <img src="resources/images/tricky.jpg">
         <h3>Moth orchid dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h3>
       `
